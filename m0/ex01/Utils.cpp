@@ -6,7 +6,7 @@
 /*   By: orezek <orezek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 13:35:47 by orezek            #+#    #+#             */
-/*   Updated: 2024/08/26 22:08:08 by orezek           ###   ########.fr       */
+/*   Updated: 2024/08/26 22:18:25 by orezek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,9 +90,9 @@ namespace Utils
 	}
 
 	std::string	TrancStr(const std::string &str)
-{
-	if (str.length() > 9)
-		return (str.substr(0, 9) + '.');
-	return (str);
-}
+	{
+		if (str.length() > 9)
+			return (str.substr(0, 9) + '.');
+		return (str);
+	}
 }
