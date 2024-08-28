@@ -6,7 +6,7 @@
 /*   By: orezek <orezek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 15:00:37 by orezek            #+#    #+#             */
-/*   Updated: 2024/08/15 11:50:30 by orezek           ###   ########.fr       */
+/*   Updated: 2024/08/28 21:44:15 by orezek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(int argc, char **argv)
 		while (*argv)
 		{
 			std::string temp = *argv;
-			for (int i = 0; i < temp.length(); i++)
+			for (int i = 0; i < (int)temp.length(); i++)
 				std::cout << (char)std::toupper(temp[i]);
 			argv++;
 			std::cout << std::endl;
