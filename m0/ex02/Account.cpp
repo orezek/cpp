@@ -6,7 +6,7 @@
 /*   By: orezek <orezek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 11:37:07 by orezek            #+#    #+#             */
-/*   Updated: 2024/08/30 22:24:32 by orezek           ###   ########.fr       */
+/*   Updated: 2024/08/30 23:21:54 by orezek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	Account::displayAccountsInfos( void )
 	std::cout << "accounts:" << _nbAccounts
 			<< ";" "total:" << _totalAmount
 			<< ";deposits:" << _totalNbDeposits
-			<< ";withdrawls:" << _totalNbWithdrawals << std::endl;
+			<< ";withdrawals:" << _totalNbWithdrawals << std::endl;
 }
 // Instance method
 void	Account::makeDeposit( int deposit )
@@ -115,7 +115,7 @@ bool	Account::makeWithdrawal( int withdrawal )
 	_displayTimestamp();
 	std::cout << "index:"
 	<< this->_accountIndex
-	<< ";p_amout:" << _amount
+	<< ";p_amount:" << _amount
 	<< ";withdrawal:refused"
 	<< std::endl;
 	return (false);
