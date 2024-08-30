@@ -6,7 +6,7 @@
 /*   By: orezek <orezek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 11:37:07 by orezek            #+#    #+#             */
-/*   Updated: 2024/08/30 23:21:54 by orezek           ###   ########.fr       */
+/*   Updated: 2024/08/30 23:33:58 by orezek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@
 Account::Account(int initial_deposit)
 {
 	this->_amount += initial_deposit;
-	this->_accountIndex = _nbAccounts;
+	this->_accountIndex = Account::_nbAccounts;
 	this->_nbDeposits = 0;
 	this->_nbWithdrawals = 0;
 	Account::_totalAmount += initial_deposit;
 	Account::_nbAccounts++;
-	_displayTimestamp();
-	std::cout << "index:" << _accountIndex
+	this->_displayTimestamp();
+	std::cout << "index:" << this->_accountIndex
 				<< ";amount:" << initial_deposit
 				<< ";created" << std::endl;
 };
@@ -33,7 +33,7 @@ Account::Account() {};
 // Destructor - used by compiler to clean the memory
 Account::~Account()
 {
-	_nbAccounts--;
+	this->_nbAccounts--;
 	Account::_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex
 				<< ";amount:" << this->_amount
@@ -56,26 +56,26 @@ int	Account::getNbAccounts( void )
 // static method - gets total amount of money deposited across all accounts
 int	Account::getTotalAmount( void )
 {
-	return (_totalAmount);
+	return (Account::_totalAmount);
 }
 // static method - gets total number of deposits, it counts makeDeposit function
 int	Account::getNbDeposits( void )
 {
-	return (_totalNbDeposits);
+	return (Account::_totalNbDeposits);
 }
 // static method - total number of withdrawals, follow the makeWithdrawal function
 int	Account::getNbWithdrawals( void )
 {
-	return (_totalNbWithdrawals);
+	return (Account::_totalNbWithdrawals);
 }
 // static method
 void	Account::displayAccountsInfos( void )
 {
-	 _displayTimestamp();
-	std::cout << "accounts:" << _nbAccounts
-			<< ";" "total:" << _totalAmount
-			<< ";deposits:" << _totalNbDeposits
-			<< ";withdrawals:" << _totalNbWithdrawals << std::endl;
+	_displayTimestamp();
+	std::cout << "accounts:" << Account::_nbAccounts
+			<< ";" "total:" << Account::_totalAmount
+			<< ";deposits:" << Account::_totalNbDeposits
+			<< ";withdrawals:" << Account::_totalNbWithdrawals << std::endl;
 }
 // Instance method
 void	Account::makeDeposit( int deposit )
@@ -83,8 +83,8 @@ void	Account::makeDeposit( int deposit )
 	int p_amount = 0;
 	p_amount = this->_amount;
 	this->_amount += deposit;
-	_totalAmount += deposit;
-	_totalNbDeposits++;
+	Account::_totalAmount += deposit;
+	Account::_totalNbDeposits++;
 	this->_nbDeposits++;
 	_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex
@@ -97,14 +97,14 @@ void	Account::makeDeposit( int deposit )
 bool	Account::makeWithdrawal( int withdrawal )
 {
 	int	temp = 0;
-	if (_amount - withdrawal >= 0)
+	if (this->_amount - withdrawal >= 0)
 	{
-		temp = _amount;
+		temp = this->_amount;
 		this->_amount -= withdrawal;
-		_totalAmount -= withdrawal;
+		Account::_totalAmount -= withdrawal;
 		this->_nbWithdrawals++;
-		_totalNbWithdrawals++;
-		_displayTimestamp();
+		Account::_totalNbWithdrawals++;
+		this->_displayTimestamp();
 		std::cout << "index:" << this->_accountIndex
 		<< ";p_amount:" << temp
 		<< ";withdrawal:" << withdrawal
@@ -115,7 +115,7 @@ bool	Account::makeWithdrawal( int withdrawal )
 	_displayTimestamp();
 	std::cout << "index:"
 	<< this->_accountIndex
-	<< ";p_amount:" << _amount
+	<< ";p_amount:" << this->_amount
 	<< ";withdrawal:refused"
 	<< std::endl;
 	return (false);
@@ -130,14 +130,13 @@ void	Account::displayStatus( void ) const
 {
 	_displayTimestamp();
 	std::cout << "index:"
-	<< _accountIndex << ";amount:"
+	<< this->_accountIndex << ";amount:"
 	<< this->_amount << ";deposits:"
 	<< this->_nbDeposits << ";withdrawals:"
 	<< this->_nbWithdrawals << std::endl;
 }
 // Private method
 // static method
-// temp implementation - implement
 void	Account::_displayTimestamp( void )
 {
 	std::time_t t = std::time(0);
@@ -149,8 +148,3 @@ void	Account::_displayTimestamp( void )
 		<< std::setfill('0') << std::setw(2) << now->tm_min
 		<< std::setfill('0') << std::setw(2) << now->tm_sec << "]";
 }
-
-
-// instance or non-static variables do not have to defined in cpp file
-// as they are initialized by the compiler from the header file
-
