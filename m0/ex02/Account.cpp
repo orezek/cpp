@@ -6,7 +6,7 @@
 /*   By: orezek <orezek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 11:37:07 by orezek            #+#    #+#             */
-/*   Updated: 2024/08/30 23:33:58 by orezek           ###   ########.fr       */
+/*   Updated: 2024/08/31 10:22:13 by orezek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Account::Account(int initial_deposit)
 	this->_nbWithdrawals = 0;
 	Account::_totalAmount += initial_deposit;
 	Account::_nbAccounts++;
-	this->_displayTimestamp();
+	Account::_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex
 				<< ";amount:" << initial_deposit
 				<< ";created" << std::endl;
@@ -71,7 +71,7 @@ int	Account::getNbWithdrawals( void )
 // static method
 void	Account::displayAccountsInfos( void )
 {
-	_displayTimestamp();
+	Account::_displayTimestamp();
 	std::cout << "accounts:" << Account::_nbAccounts
 			<< ";" "total:" << Account::_totalAmount
 			<< ";deposits:" << Account::_totalNbDeposits
@@ -86,7 +86,7 @@ void	Account::makeDeposit( int deposit )
 	Account::_totalAmount += deposit;
 	Account::_totalNbDeposits++;
 	this->_nbDeposits++;
-	_displayTimestamp();
+	Account::_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex
 	<< ";p_amount:" << p_amount
 	<< ";deposit:" << deposit
@@ -96,23 +96,23 @@ void	Account::makeDeposit( int deposit )
 // Instance method
 bool	Account::makeWithdrawal( int withdrawal )
 {
-	int	temp = 0;
+	int	p_amount = 0;
 	if (this->_amount - withdrawal >= 0)
 	{
-		temp = this->_amount;
+		p_amount = this->_amount;
 		this->_amount -= withdrawal;
 		Account::_totalAmount -= withdrawal;
 		this->_nbWithdrawals++;
 		Account::_totalNbWithdrawals++;
-		this->_displayTimestamp();
+		Account::_displayTimestamp();
 		std::cout << "index:" << this->_accountIndex
-		<< ";p_amount:" << temp
+		<< ";p_amount:" << p_amount
 		<< ";withdrawal:" << withdrawal
 		<< ";amount:" << this->_amount
 		<< ";nb_withdrawals:" << this->_nbWithdrawals << std::endl;
 		return (true);
 	}
-	_displayTimestamp();
+	Account::_displayTimestamp();
 	std::cout << "index:"
 	<< this->_accountIndex
 	<< ";p_amount:" << this->_amount
@@ -128,7 +128,7 @@ int		Account::checkAmount( void ) const
 // Instance method
 void	Account::displayStatus( void ) const
 {
-	_displayTimestamp();
+	Account::_displayTimestamp();
 	std::cout << "index:"
 	<< this->_accountIndex << ";amount:"
 	<< this->_amount << ";deposits:"
@@ -146,5 +146,5 @@ void	Account::_displayTimestamp( void )
 		<< std::setfill('0') << std::setw(2) << now->tm_mday << "_"
 		<< std::setfill('0') << std::setw(2) << now->tm_hour
 		<< std::setfill('0') << std::setw(2) << now->tm_min
-		<< std::setfill('0') << std::setw(2) << now->tm_sec << "]";
+		<< std::setfill('0') << std::setw(2) << now->tm_sec << "] ";
 }
