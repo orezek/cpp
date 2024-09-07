@@ -6,7 +6,7 @@
 /*   By: orezek <orezek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 21:31:44 by orezek            #+#    #+#             */
-/*   Updated: 2024/09/08 00:08:45 by orezek           ###   ########.fr       */
+/*   Updated: 2024/09/08 00:22:57 by orezek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	main(int argc, char *argv[])
 		while (std::getline(inputFile, line))
 		{
 			size_t pos = line.find(searchStr);
-			while (pos != std::string::npos)
+			while (pos != std::string::npos) // npos is the largest possible value of size_t is constant
 			{
 				line.erase(pos, searchStr.length()); // Remove searchStr
 				line.insert(pos, replaceStr); // Insert replaceWord
