@@ -6,7 +6,7 @@
 /*   By: orezek <orezek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 13:01:06 by orezek            #+#    #+#             */
-/*   Updated: 2024/09/07 16:12:28 by orezek           ###   ########.fr       */
+/*   Updated: 2024/09/07 16:14:22 by orezek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ HumanB may or may not use Weapon() object hence pointer type is more suitable fo
 HumanB. In HumanB the setWeapon() is set to use reference as can be seen in the line 49.
 */
 
+// Pointers and references can be dynamically changed - not copies of the objects = they are static
 int main(void)
 {
 	{
