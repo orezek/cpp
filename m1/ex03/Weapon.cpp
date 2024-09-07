@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: orezek <orezek@student.42prague.com>       +#+  +:+       +#+        */
+/*   By: orezek <orezek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 13:09:54 by orezek            #+#    #+#             */
-/*   Updated: 2024/09/07 13:19:49 by orezek           ###   ########.fr       */
+/*   Updated: 2024/09/07 15:15:53 by orezek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,13 @@
 # include <iostream>
 
 Weapon::Weapon(std::string type) : type(type){};
-Weapon::~Weapon() {};
+Weapon::~Weapon()
+{
+	std::cout << "Weapon destroyed: ";
+	std::cout << this->type << std::endl;
+};
 
-const std::string Weapon::getType(void) const
+const std::string &Weapon::getType(void) const
 {
 	return (this->type);
 }
