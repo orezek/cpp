@@ -6,7 +6,7 @@
 /*   By: orezek <orezek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 21:31:44 by orezek            #+#    #+#             */
-/*   Updated: 2024/09/07 23:52:52 by orezek           ###   ########.fr       */
+/*   Updated: 2024/09/08 00:08:45 by orezek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ int	main(int argc, char *argv[])
 		if (!outputFile.is_open())
 		{
 			std::cerr << "Error: Could not create output file" << std::endl;
+			inputFile.close();
 			return (1);
 		}
 		std::string line;
@@ -66,12 +67,14 @@ int	main(int argc, char *argv[])
 			size_t pos = line.find(searchStr);
 			while (pos != std::string::npos)
 			{
-				line.erase(pos, searchStr.length());        // Remove searchWord
-				line.insert(pos, replaceStr);               // Insert replaceWord
+				line.erase(pos, searchStr.length()); // Remove searchStr
+				line.insert(pos, replaceStr); // Insert replaceWord
 				pos = line.find(searchStr, pos + replaceStr.length()); // Continue searching after replacement
 			}
-			outputFile << line << '\n';  // Write modified line to output file
+			outputFile << line << '\n'; // Write modified line to output file
 		}
+		inputFile.close();
+		outputFile.close();
 	}
 	else
 	{
