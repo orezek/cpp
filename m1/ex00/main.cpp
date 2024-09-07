@@ -6,7 +6,7 @@
 /*   By: orezek <orezek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 23:19:25 by orezek            #+#    #+#             */
-/*   Updated: 2024/09/07 08:55:41 by orezek           ###   ########.fr       */
+/*   Updated: 2024/09/07 09:39:21 by orezek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 int main()
 {
-	Zombie *Okamura;
+	Zombie *zom;
 
-	Okamura = newZombie("Charlie");
-	Okamura->announce();
+	zom = newZombie("Charlie");
+	zom->announce();
 
 	randomChump("Bonnye");
 
-	delete Okamura;
+	delete zom;
 
 	return (0);
 }
