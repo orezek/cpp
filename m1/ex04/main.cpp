@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: orezek <orezek@student.42.fr>              +#+  +:+       +#+        */
+/*   By: orezek <orezek@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 21:31:44 by orezek            #+#    #+#             */
-/*   Updated: 2024/09/08 00:22:57 by orezek           ###   ########.fr       */
+/*   Updated: 2024/09/08 13:47:03 by orezek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 #include <fstream>
 
 /*
-	Side NOTE: two patterns.
-	One for using argv for input - like bash command
-	Second for using input inside a loop like GNL - more interactive usage (using file descriptors)
+	Main purpose of this exercie is to use ifstream and outstream API
 */
 
 int	isPrintable(std::string str)
@@ -53,7 +51,8 @@ int	main(int argc, char *argv[])
 		}
 		std::string outputName = argv[1];
 		outputName.append(".replace");
-		std::ofstream outputFile(outputName);
+		std::ofstream outputFile(outputName.c_str());
+		//std::ofstream outputFile(outputName); // work on MacOs not on linux -above line needed
 		if (!outputFile.is_open())
 		{
 			std::cerr << "Error: Could not create output file" << std::endl;
