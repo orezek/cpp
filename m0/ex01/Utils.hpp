@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.hpp                                          :+:      :+:    :+:   */
+/*   Utils.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: orezek <orezek@student.42.fr>              +#+  +:+       +#+        */
+/*   By: orezek <orezek@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 13:35:36 by orezek            #+#    #+#             */
-/*   Updated: 2024/08/26 21:38:26 by orezek           ###   ########.fr       */
+/*   Updated: 2024/09/08 13:23:23 by orezek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <iostream>
 # include <limits>
 # include <sstream>
+# include <cstdlib>
 
 namespace Utils {
 	std::string	GetInput(const std::string& prompt);

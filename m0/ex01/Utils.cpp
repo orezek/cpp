@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.cpp                                          :+:      :+:    :+:   */
+/*   Utils.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: orezek <orezek@student.42.fr>              +#+  +:+       +#+        */
+/*   By: orezek <orezek@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 13:35:47 by orezek            #+#    #+#             */
-/*   Updated: 2024/08/26 22:18:25 by orezek           ###   ########.fr       */
+/*   Updated: 2024/09/08 13:19:15 by orezek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ namespace Utils
 		{
 			std::cout << prompt << std::endl;
 			std::getline(std::cin, input);
+			if (std::cin.eof())
+				exit(1);
 			if (std::cin.fail())
 			{
 				std::cout << "Input error! Please try again." << std::endl;

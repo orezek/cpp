@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: orezek <orezek@student.42.fr>              +#+  +:+       +#+        */
+/*   By: orezek <orezek@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 13:58:50 by orezek            #+#    #+#             */
-/*   Updated: 2024/08/26 21:37:18 by orezek           ###   ########.fr       */
+/*   Updated: 2024/09/08 13:20:04 by orezek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ const Contact*	PhoneBook::SearchContact(void) const
 		else
 			return (&contacts[foundIndex]);
 	}
-	return (nullptr);
+	return (NULL);
 }
 
 int PhoneBook::FindIndex(int index) const
@@ -81,7 +81,7 @@ int PhoneBook::FindIndex(int index) const
 
 void	PhoneBook::PrintContact(const Contact *contact) const
 {
-	if (contact != nullptr)
+	if (contact != NULL)
 	{
 		std::cout << std::endl;
 		std::cout << "---------Printing Contact Details-----------" << std::endl;

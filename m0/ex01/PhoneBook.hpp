@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: orezek <orezek@student.42.fr>              +#+  +:+       +#+        */
+/*   By: orezek <orezek@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 15:50:32 by orezek            #+#    #+#             */
-/*   Updated: 2024/08/26 21:36:36 by orezek           ###   ########.fr       */
+/*   Updated: 2024/09/08 13:22:58 by orezek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 #include <cstdlib>
 #include <sstream>
 #include "Utils.hpp"
+#include <cstdlib>
 
 const int	MAX_CONTACTS = 8;
 const int	INVALID_INDEX = -99;
