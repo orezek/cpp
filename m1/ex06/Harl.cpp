@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: orezek <orezek@student.42.fr>              +#+  +:+       +#+        */
+/*   By: orezek <orezek@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 12:29:27 by orezek            #+#    #+#             */
-/*   Updated: 2024/09/09 12:40:49 by orezek           ###   ########.fr       */
+/*   Updated: 2024/09/09 18:16:51 by orezek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,26 +58,41 @@ void Harl:: complain(const std::string level)
 			switch (i)
 			{
 				case 0:
+					std::cout << "[ DEBUG ]" << std::endl;
 					(this->*functionPtr[0])();
+					std::cout << "[ INFO ]" << std::endl;
 					(this->*functionPtr[1])();
+					std::cout << "[ WARNING ]" << std::endl;
 					(this->*functionPtr[2])();
+					std::cout << "[ ERROR ]" << std::endl;
 					(this->*functionPtr[3])();
 					break;
 				case 1:
+					std::cout << "[ INFO ]" << std::endl;
 					(this->*functionPtr[1])();
+					std::cout << "[ WARNING ]" << std::endl;
 					(this->*functionPtr[2])();
+					std::cout << "[ ERROR ]" << std::endl;
 					(this->*functionPtr[3])();
 					break;
 				case 2:
+					std::cout << "[ WARNING ]" << std::endl;
 					(this->*functionPtr[2])();
+					std::cout << "[ ERROR ]" << std::endl;
 					(this->*functionPtr[3])();
 					break;
 				case 3:
+					std::cout << "[ ERROR ]" << std::endl;
 					(this->*functionPtr[3])();
 					break;
 				default:
 					break;
 			}
+			break;
+		}
+		else
+		{
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 			break;
 		}
 	}
