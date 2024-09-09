@@ -6,7 +6,7 @@
 /*   By: orezek <orezek@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 21:31:44 by orezek            #+#    #+#             */
-/*   Updated: 2024/09/08 13:47:03 by orezek           ###   ########.fr       */
+/*   Updated: 2024/09/09 19:04:26 by orezek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,19 @@ int	isPrintable(std::string str)
 	return (1);
 }
 
+// Checks if file is empty.
+bool isFileEmpty(const std::string &filename)
+{
+	std::ifstream file(filename.c_str());  // Use .c_str() for C++98 compatibility
+	// Move to the end of the file to check its size
+	file.seekg(0, std::ios::end);
+	bool isEmpty = file.tellg() == 0;
+	// Move the file pointer back to the beginning for further I/O
+	file.seekg(0, std::ios::beg);
+	return isEmpty;
+}
+
+
 int	main(int argc, char *argv[])
 {
 	if (argc == 4)
@@ -38,6 +51,13 @@ int	main(int argc, char *argv[])
 			std::cerr << "ERROR: Invalid file." << std::endl;
 			return (1);
 		}
+
+		if (isFileEmpty(argv[1]) == 1)
+		{
+			std::cerr << "ERROR: File is empty" << std::endl;
+			return (1);
+		}
+
 		std::string searchStr = argv[2];
 		if (searchStr.empty())
 		{
