@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: orezek <orezek@student.42prague.com>       +#+  +:+       +#+        */
+/*   By: orezek <orezek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 15:21:46 by orezek            #+#    #+#             */
-/*   Updated: 2024/09/08 16:33:51 by orezek           ###   ########.fr       */
+/*   Updated: 2024/09/09 12:01:19 by orezek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
 
+#define NO_PTR 4
 class Harl
 {
 	public:
@@ -25,4 +26,5 @@ class Harl
 	void info( void );
 	void warning( void );
 	void error( void );
-}
+	void (Harl::*functionPtr[NO_PTR])(void);
+};
