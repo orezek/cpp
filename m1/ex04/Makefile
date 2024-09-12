@@ -9,7 +9,7 @@ OBJDIR      = ./obj
 BINDIR      = ./bin
 
 # Target executable
-TARGET      = $(BINDIR)/sed
+TARGET      = $(BINDIR)/loser_sed
 
 # Source and object files
 SOURCES     = $(SRCDIR)/main.cpp
