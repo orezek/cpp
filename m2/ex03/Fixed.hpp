@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: orezek <orezek@student.42.fr>              +#+  +:+       +#+        */
+/*   By: orezek <orezek@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 12:02:04 by orezek            #+#    #+#             */
-/*   Updated: 2024/09/12 13:34:29 by orezek           ###   ########.fr       */
+/*   Updated: 2024/09/12 17:01:37 by orezek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
-
+#include <cmath>
 // The point of this exercise is to use Fixed class
 
 class Fixed
