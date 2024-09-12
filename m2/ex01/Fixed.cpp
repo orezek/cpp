@@ -6,7 +6,7 @@
 /*   By: orezek <orezek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 12:03:56 by orezek            #+#    #+#             */
-/*   Updated: 2024/09/11 19:44:18 by orezek           ###   ########.fr       */
+/*   Updated: 2024/09/12 11:05:23 by orezek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,7 @@ Fixed::Fixed(const int intNumber) {
 // Float Constructor
 Fixed::Fixed(const float floatNumber) {
 	std::cout << "Float constructor called" << std::endl;
-	// 1. possibility - rounding result float to integer
 	_fixedPoint = roundf(floatNumber * (float) (1 << BITS));
-	// 2. possibility - casting (without rounding)
-	// fixedPointValue = (int) (floatNumber * (float) (1 << FRACTIONALBITS));
 }
 
 // Copy constructor takes a reference of a object
@@ -76,7 +73,7 @@ int	Fixed::toInt (void) const {
 }
 
 
-std::ostream& operator<<(std::ostream &outputStream, const Fixed &fixedNb)
+std::ostream &operator<<(std::ostream &outputStream, const Fixed &fixedNb)
 {
 	outputStream << fixedNb.toFloat();
 	return (outputStream);
