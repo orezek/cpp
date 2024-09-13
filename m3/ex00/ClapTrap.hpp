@@ -6,7 +6,7 @@
 /*   By: orezek <orezek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 19:02:16 by orezek            #+#    #+#             */
-/*   Updated: 2024/09/12 21:30:24 by orezek           ###   ########.fr       */
+/*   Updated: 2024/09/13 10:50:31 by orezek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ class ClapTrap
 {
 	public:
 		// Orthodox canonical form
+		ClapTrap();
 		ClapTrap(std::string name);
 		ClapTrap(const ClapTrap &other);
 		~ClapTrap();
@@ -32,7 +33,6 @@ class ClapTrap
 		int getAttackDamage(void);
 		std::string getName(void);
 	private:
-		ClapTrap();
 		std::string _name;
 		int _hitPoints;
 		int _energyPoints;
