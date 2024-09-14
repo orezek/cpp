@@ -9,7 +9,7 @@ OBJDIR      = ./obj
 BINDIR      = ./bin
 
 # Target executable
-TARGET      = $(BINDIR)/animals
+TARGET      = $(BINDIR)/abstructAnimals
 
 # Source and object files
 SOURCES     = $(SRCDIR)/main.cpp \

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: orezek <orezek@student.42.fr>              +#+  +:+       +#+        */
+/*   By: orezek <orezek@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 13:11:00 by orezek            #+#    #+#             */
-/*   Updated: 2024/09/14 14:34:28 by orezek           ###   ########.fr       */
+/*   Updated: 2024/09/14 16:47:21 by orezek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,11 @@
 Brain::Brain()
 {
 	for(int i = 0; i < 100; i++)
-		ideas[i] = "idea "+std::to_string(i);
+	{
+		std::ostringstream oss;
+		oss << i;
+		ideas[i] = "idea "+ oss.str();
+	}
 	std::cout << "Brain was created by default constructor." << std::endl;
 }
 
