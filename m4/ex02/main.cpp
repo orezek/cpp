@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: orezek <orezek@student.42.fr>              +#+  +:+       +#+        */
+/*   By: orezek <orezek@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 21:40:28 by orezek            #+#    #+#             */
-/*   Updated: 2024/09/14 15:17:06 by orezek           ###   ########.fr       */
+/*   Updated: 2024/09/14 17:00:40 by orezek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ int main() {
 	for (int i = 0; i < arraySize; i++) {
 		delete animals[i];  // Deletes Dog and Cat objects, calls destructors
 	}
-
 	return 0;
 }
 
