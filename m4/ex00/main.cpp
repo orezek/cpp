@@ -6,7 +6,7 @@
 /*   By: orezek <orezek@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 21:40:28 by orezek            #+#    #+#             */
-/*   Updated: 2024/09/14 11:31:14 by orezek           ###   ########.fr       */
+/*   Updated: 2024/09/14 15:30:22 by orezek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include "Dog.hpp"
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
+
+// Point of the exercises: Polymorphism (virtual), Deep momory vs shallow memory copying, Using Abstruct classes
 
 int main(void)
 {
@@ -134,4 +136,20 @@ but the actual function that gets called is the one defined in the derived class
 For example, if Animal has a virtual void makeSound() function that is overridden
 in Dog and Cat, calling makeSound() on the base class pointer will invoke the
 correct version depending on the actual object type (either Dog or Cat).
+*/
+
+/*
+Copy Initialization vs. Direct Initialization:
+
+When you use Dog dog = Dog();, it's copy initialization because it involves creating a
+temporary Dog object and then copying or moving it into the dog variable.
+When you use Dog dog;, it’s direct initialization or default initialization,
+where the object is created directly using the default constructor,
+and no temporary object is involved.
+Most Vexing Parse:
+
+Dog dog(); looks like object initialization, but it's actually a
+function declaration. This is a quirk in C++'s grammar, often called
+the Most Vexing Parse. If you intend to create an object, you need to avoid this syntax.
+
 */
